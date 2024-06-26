@@ -54,8 +54,7 @@ function Sidebar() {
             <div className="category-header">
               <Link
                 to={category.id === "/" ? "/" : `/category/${category.ids ? category.ids.join(',') : category.id}`}
-                className="category-link"
-              >
+                className="category-link">
                 {category.name}
               </Link>
               {category.subcategories && (
