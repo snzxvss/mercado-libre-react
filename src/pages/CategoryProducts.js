@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import '../assets/styles/home-style.css';
+import '../assets/styles/global-style.css';
 import Sidebar from '../components/SideBar';
 import ProductTable from '../components/ProductTable';
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/styles/home-style.css';
+import '../assets/styles/global-style.css';
 import Sidebar from '../components/SideBar';
 import ProductTable from '../components/ProductTable';
 

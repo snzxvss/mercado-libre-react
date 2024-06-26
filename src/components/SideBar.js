@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/styles/home-style.css';
+import '../assets/styles/global-style.css';
 
 function Sidebar() {
   const [expandedCategories, setExpandedCategories] = useState({});
