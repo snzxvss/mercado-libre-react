@@ -19,7 +19,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
             <th>Producto Id</th>
             <th>Nombre producto</th>
             <th>Precio</th>
-            <th>Mercado</th>
             <th>Enlace</th>
             <th>Imagen</th>
           </tr>
@@ -31,7 +30,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
               <td>{products[0].id}</td>
               <td>{products[0].title}</td>
               <td>${products[0].price}</td>
-              <td>Mercadolibre</td>
               <td><a href={products[0].permalink}>Ver producto</a></td>
               <td><img src={products[0].thumbnail} alt={products[0].title} className="product-image" /></td>
             </tr>
@@ -40,7 +38,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
           {emptyRows > 0 && (
             Array.from({ length: emptyRows }).map((_, index) => (
               <tr key={`empty-${index}`}>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -57,7 +54,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
                 <td className="skeleton-cell-container"><div className="skeleton-cell"></div></td>
                 <td className="skeleton-cell-container"><div className="skeleton-cell"></div></td>
                 <td className="skeleton-cell-container"><div className="skeleton-cell"></div></td>
-                <td className="skeleton-cell-container"><div className="skeleton-cell"></div></td>
               </tr>
             ))
           )}
@@ -67,7 +63,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
                 <td>{product.id}</td>
                 <td>{product.title}</td>
                 <td>${product.price}</td>
-                <td>Mercadolibre</td>
                 <td><a class="link" href={product.permalink}>Ver producto</a></td>
                 <td><img src={product.thumbnail} alt={product.title} className="product-image" /></td>
               </tr>
