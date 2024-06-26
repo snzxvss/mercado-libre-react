@@ -79,7 +79,6 @@ function Sidebar() {
                           <li key={innerIndex} className={`subcategory-item level-${subIndex}-${innerIndex}`}>
                             <span className="subcategory-marker">-</span>
                             <Link to={`/category/${Array.isArray(innerSub.id) ? innerSub.id.join(',') : innerSub.id}`}>{innerSub.name}</Link>
-                            {/* Puedes continuar anidando subcategorías de ser necesario */}
                           </li>
                         ))}
                       </ul>

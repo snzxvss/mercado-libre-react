@@ -6,7 +6,7 @@ import ProductTable from '../components/ProductTable';
 
 const CategoryProducts = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [offset, setOffset] = useState(0); // Start with 0
+  const [offset, setOffset] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [loading, setLoading] = useState(true);
   const limit = 10;
@@ -34,8 +34,8 @@ const CategoryProducts = () => {
     setLoading(true);
     const lastCategory = localStorage.getItem('lastCategory');
     if (category_id !== lastCategory) {
-      setOffset(0); // Reset offset when category changes
-      localStorage.removeItem('currentOffset'); // Clear saved offset
+      setOffset(0);
+      localStorage.removeItem('currentOffset');
     } else {
       const savedOffset = parseInt(localStorage.getItem('currentOffset'), 10);
       if (!isNaN(savedOffset)) {
@@ -54,7 +54,7 @@ const CategoryProducts = () => {
       .catch(() => {
         setLoading(false);
       });
-  }, [categoryIds, offset, category_id]); // Depend on categoryIds and offset
+  }, [categoryIds, offset, category_id]);
 
   return (
     <div className="full-container">

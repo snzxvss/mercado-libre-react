@@ -1,15 +1,14 @@
 import React from 'react';
 
 const ProductTable = ({ products, loading, offset, limit }) => {
-  // Verifica si hay un solo producto
+
   const hasSingleProduct = products.length === 1;
 
-  // Calcula cuántas filas de espacios en blanco se necesitan para llenar la tabla
   let emptyRows = 0;
   if (products.length === 1) {
-    emptyRows = 2; // Si hay un solo producto, se agregan 2 espacios en blanco
+    emptyRows = 2;
   } else if (products.length === 2) {
-    emptyRows = 1; // Si hay dos productos, se agrega 1 espacio en blanco
+    emptyRows = 1; 
   }
 
   return (
@@ -26,7 +25,7 @@ const ProductTable = ({ products, loading, offset, limit }) => {
           </tr>
         </thead>
         <tbody>
-          {/* Renderiza primero el producto único si existe */}
+
           {hasSingleProduct && (
             <tr style={{ fontWeight: 'bold' }}>
               <td>{products[0].id}</td>
@@ -38,7 +37,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
             </tr>
           )}
 
-          {/* Renderiza espacios en blanco según la cantidad de productos */}
           {emptyRows > 0 && (
             Array.from({ length: emptyRows }).map((_, index) => (
               <tr key={`empty-${index}`}>
@@ -51,8 +49,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
               </tr>
             ))
           )}
-
-          {/* Renderiza los productos con skeleton durante la carga */}
           {loading && (
             Array.from({ length: limit }).map((_, index) => (
               <tr key={`skeleton-${index}`}>
@@ -65,8 +61,6 @@ const ProductTable = ({ products, loading, offset, limit }) => {
               </tr>
             ))
           )}
-
-          {/* Renderiza los productos reales cuando no está cargando */}
           {!loading && !hasSingleProduct && (
             products.map((product) => (
               <tr key={product.id}>
